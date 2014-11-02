@@ -80,3 +80,24 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
 ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+http://www.freebuf.com/tools/43194.html
+快速、直接的XSS漏洞检测爬虫 – XSScrapy
+phper @ 工具 2014-09-16 共 23456 人围观，发现 54 个不明物体  +12 Favorite收藏该文
+xsscrapySS1.png
+XSScrapy是一个快速、直接的XSS漏洞检测爬虫，你只需要一个URL，它便可以帮助你发现XSS跨站脚本漏洞。
+XSScrapy的XSS漏洞攻击测试向量将会覆盖
+
+Http头中的Referer字段
+User-Agent字段
+Cookie
+表单（包括隐藏表单）
+URL参数
+RUL末尾，如 www.example.com/<script>alert(1)</script>
+跳转型XSS
+因为Scrapy并不是一个浏览器，所以对AJAX无能为力，我将会在未来努力实现这些功能，尽管并不容易:）
+使用方法
+基本检测命令
+./xsscrapy.py -u http://something.com
+如果你需要登陆的话，加上账号、密码作为参数即可
+./xsscrapy.py -u http://something.com/login_page -l loginname -p pa$$word
+检测结果将会存储在XSS-vulnerable.txt.
